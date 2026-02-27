@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Mutual Funds Online : Explore</title>
+  </head>
+  <body>
+    <!-- ─── Navigation bar ─────────────────────────────── -->
+    <div class="navbar">
+      <div class="navbar_1">
+        <img
+          src="{{ url_for('static', filename='Media/groww-logo-270.webp') }}"
+          alt="Groww Logo"
+          class="groww_logo"
+        />
+        <a href="">Stocks</a>
+        <a href="">F&amp;O</a>
+        <a href="/MutualFunds">Mutual Funds</a>
+      </div>
+      <div class="navbar_2">
+        <div class="search_box">
+          <i class="fa fa-search search_icon"></i>
+          <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder="Search..."
+          />
+        </div>
+        <a href="/notifications"><i class="fa fa-bell bell_icon"></i></a>
+        <a href="/profile">
+          <img
+            src="{{ url_for('static', filename='Media/profile.jpg') }}"
+            alt="Profile"
+            class="profile_pic"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── Fields bar ──────────────────────────────────── -->
+    <div class="fieldsbar">
+      <div class="fieldsbar_1">
+        <a href="">Explore</a>
+        <a href="">Dashboard</a>
+        <a href="/MutualFunds">SIP</a>
+        <a href="">Watchlist</a>
+      </div>
+      <div class="fieldsbar_2">
+        <a href=""><i class="fa fa-shopping-cart"></i> Cart</a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ─── Two-column page layout ──────────────────────── -->
+    <div class="page_layout">
+      <!-- ══ LEFT COLUMN — Popular Funds · Collections · Funds by Groww ══ -->
+      <div class="col_main">
+        <!-- Popular Funds -->
+        <section class="section">
+          <h3>Popular Funds</h3>
+          <div class="cards_container">
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/hdfc_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Mirae Asset Large Cap Fund</p>
+                  <p class="fund_type">Large Cap · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">18.5%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹1,000</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹32,000 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/idfc_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Axis Bluechip Fund</p>
+                  <p class="fund_type">Large Cap · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">15.2%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹500</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹28,500 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/ppfas_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Parag Parikh Flexi Cap Fund</p>
+                  <p class="fund_type">Flexi Cap · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">22.1%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹1,000</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹54,000 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/axis_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Axis Small Cap Fund</p>
+                  <p class="fund_type">Small Cap · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">28.7%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹500</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹19,000 Cr</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Collections -->
+        <section class="section">
+          <h3>Collections</h3>
+          <div class="category_row">
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/high_return.svg"
+                alt="High Return"
+                class="category_img"
+              />
+              <p class="category_label">High Return</p>
+            </div>
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/gold_funds.svg"
+                alt="Gold & Silver"
+                class="category_img"
+              />
+              <p class="category_label">Gold &amp; Silver</p>
+            </div>
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/5_star_funds.svg"
+                alt="Large Cap"
+                class="category_img"
+              />
+              <p class="category_label">Large Cap</p>
+            </div>
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/large_cap.svg"
+                alt="Small Cap"
+                class="category_img"
+              />
+              <p class="category_label">Small Cap</p>
+            </div>
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/mid_cap.svg"
+                alt="Mid Cap"
+                class="category_img"
+              />
+              <p class="category_label">Mid Cap</p>
+            </div>
+            <div class="category_card">
+              <img
+                src="https://resources.groww.in/mf-assets/web/collection/dark/small_cap.svg"
+                alt="Flexi Cap"
+                class="category_img"
+              />
+              <p class="category_label">Flexi Cap</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Funds by Groww -->
+        <section class="section">
+          <h3>Funds by Groww</h3>
+          <div class="cards_container">
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/indiabulls_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Groww Nifty 50 Index Fund</p>
+                  <p class="fund_type">Index · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">16.2%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹500</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹3,200 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/indiabulls_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Groww Nifty Next 50 Index Fund</p>
+                  <p class="fund_type">Index · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">3Y Returns</p>
+                  <p class="metric_value green">19.8%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹500</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹1,850 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/indiabulls_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Groww Liquid Fund</p>
+                  <p class="fund_type">Liquid · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">1Y Returns</p>
+                  <p class="metric_value green">7.1%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹1,000</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹980 Cr</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/indiabulls_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="card_title">
+                  <p class="fund_name">Groww Arbitrage Fund</p>
+                  <p class="fund_type">Arbitrage · Direct · Growth</p>
+                </div>
+              </div>
+              <hr class="card_divider" />
+              <div class="card_bottom">
+                <div class="metric">
+                  <p class="metric_label">1Y Returns</p>
+                  <p class="metric_value green">7.4%</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Min SIP</p>
+                  <p class="metric_value">₹1,000</p>
+                </div>
+                <div class="metric">
+                  <p class="metric_label">Fund Size</p>
+                  <p class="metric_value">₹610 Cr</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- /col_main -->
+
+      <!-- ══ RIGHT SIDEBAR — Your Investments · Products & Tools ══ -->
+      <div class="col_sidebar">
+        <!-- Your Investments -->
+        <section class="section">
+          <div class="inv_header">
+            <h3>Your Investments</h3>
+            <a href="" class="inv_viewall">View All</a>
+          </div>
+
+          <!-- Portfolio summary strip -->
+          <div class="portfolio_summary">
+            <div class="ps_block">
+              <p class="ps_label">Current Value</p>
+              <p class="ps_value">₹1,24,380</p>
+            </div>
+            <div class="ps_divider"></div>
+            <div class="ps_block">
+              <p class="ps_label">Total Invested</p>
+              <p class="ps_value">₹1,05,000</p>
+            </div>
+            <div class="ps_divider"></div>
+            <div class="ps_block">
+              <p class="ps_label">Total Returns</p>
+              <p class="ps_value green">
+                +₹19,380 <span class="ps_pct">(18.5%)</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Invested fund rows -->
+          <div class="inv_list">
+            <!-- Fund 1 — positive returns -->
+            <div class="inv_row">
+              <div class="inv_row_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/ppfas_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="inv_info">
+                  <p class="fund_name">Parag Parikh Flexi Cap Fund</p>
+                  <p class="fund_type">Flexi Cap · Direct · Growth</p>
+                </div>
+                <div class="inv_returns positive">
+                  <p class="inv_current">₹52,140</p>
+                  <p class="inv_pnl">▲ +12.3%</p>
+                </div>
+              </div>
+              <div class="inv_row_bottom">
+                <span class="inv_meta">Invested: ₹46,000</span>
+                <span class="inv_meta">SIP: ₹2,000/mo</span>
+                <span class="inv_meta">Units: 142.3</span>
+              </div>
+              <div class="inv_progress_bar">
+                <div class="inv_progress_fill" style="width: 62%"></div>
+              </div>
+            </div>
+
+            <!-- Fund 2 — strong positive returns -->
+            <div class="inv_row">
+              <div class="inv_row_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/axis_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="inv_info">
+                  <p class="fund_name">Axis Small Cap Fund</p>
+                  <p class="fund_type">Small Cap · Direct · Growth</p>
+                </div>
+                <div class="inv_returns positive">
+                  <p class="inv_current">₹41,820</p>
+                  <p class="inv_pnl">▲ +31.6%</p>
+                </div>
+              </div>
+              <div class="inv_row_bottom">
+                <span class="inv_meta">Invested: ₹31,800</span>
+                <span class="inv_meta">SIP: ₹1,500/mo</span>
+                <span class="inv_meta">Units: 89.6</span>
+              </div>
+              <div class="inv_progress_bar">
+                <div class="inv_progress_fill" style="width: 78%"></div>
+              </div>
+            </div>
+
+            <!-- Fund 3 — slight loss (realistic) -->
+            <div class="inv_row">
+              <div class="inv_row_top">
+                <img
+                  src="https://assets-netstorage.groww.in/mf-assets/logos/idfc_groww.png"
+                  alt="Fund Logo"
+                  class="fund_logo"
+                />
+                <div class="inv_info">
+                  <p class="fund_name">Axis Bluechip Fund</p>
+                  <p class="fund_type">Large Cap · Direct · Growth</p>
+                </div>
+                <div class="inv_returns negative">
+                  <p class="inv_current">₹30,420</p>
+                  <p class="inv_pnl">▼ −2.8%</p>
+                </div>
+              </div>
+              <div class="inv_row_bottom">
+                <span class="inv_meta">Invested: ₹27,200</span>
+                <span class="inv_meta">Lumpsum</span>
+                <span class="inv_meta">Units: 204.1</span>
+              </div>
+              <div class="inv_progress_bar">
+                <div
+                  class="inv_progress_fill negative_fill"
+                  style="width: 35%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- /inv_list -->
+        </section>
+
+        <!-- Products and Tools -->
+        <section class="section productsandtools">
+          <h3>Products and Tools</h3>
+          <ul class="tools_list">
+            <li>
+              <a href=""><i class="fa fa-bolt"></i> NFO Live</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-file-arrow-up"></i> Import Funds</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-scale-balanced"></i> Compare Funds</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-calculator"></i> SIP Calculator</a>
+            </li>
+            <li>
+              <a href=""
+                ><i class="fa fa-certificate"></i> Mutual Funds Screener</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- /col_sidebar -->
+    </div>
+    <!-- /page_layout -->
+
+    <!-- ─── Footer ──────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer_top">
+        <div class="footer_brand">
+          <img
+            src="{{ url_for('static', filename='Media/groww-logo-270.webp') }}"
+            alt="Groww"
+            class="footer_logo"
+          />
+          <p class="footer_tagline">
+            Investing made simple<br />for every Indian.
+          </p>
+          <div class="footer_social">
+            <a
+              href="https://twitter.com/GrowwApp"
+              target="_blank"
+              aria-label="Twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/GrowwApp"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/groww.app"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/growwapp"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/c/Groww"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer_col">
+          <h4>Products</h4>
+          <a href="">Stocks</a>
+          <a href="">Futures &amp; Options</a>
+          <a href="">Mutual Funds</a>
+          <a href="">ETFs</a>
+          <a href="">IPO</a>
+          <a href="">US Stocks</a>
+        </div>
+
+        <div class="footer_col">
+          <h4>Company</h4>
+          <a href="">About Us</a>
+          <a href="">Careers</a>
+          <a href="">Blog</a>
+          <a href="">Press</a>
+          <a href="">Help Center</a>
+        </div>
+
+        <div class="footer_col">
+          <h4>Learn</h4>
+          <a href="">What is SIP?</a>
+          <a href="">What are Mutual Funds?</a>
+          <a href="">How to Invest in Stocks</a>
+          <a href="">Groww Digest</a>
+          <a href="">Calculators</a>
+        </div>
+
+        <div class="footer_col">
+          <h4>Legal</h4>
+          <a href="">Privacy Policy</a>
+          <a href="">Terms &amp; Conditions</a>
+          <a href="">Disclosure</a>
+          <a href="">Grievance Redressal</a>
+        </div>
+      </div>
+      <!-- /footer_top -->
+
+      <hr class="footer_hr" />
+
+      <div class="footer_bottom">
+        <p class="footer_reg">
+          Groww Invest Tech Pvt. Ltd.&nbsp;&nbsp;|&nbsp;&nbsp;SEBI Registered ·
+          ARN-140065&nbsp;&nbsp;|&nbsp;&nbsp;NSE &amp; BSE Member · SEBI Reg.
+          INZ000301838
+        </p>
+        <p class="footer_disclaimer">
+          Investments in securities market are subject to market risks. Read all
+          the related documents carefully before investing. Registration granted
+          by SEBI and certification from NISM in no way guarantee performance of
+          the intermediary or provide any assurance of returns.
+        </p>
+        <p class="footer_copy">
+          &copy; 2024 Groww Invest Tech Pvt. Ltd. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

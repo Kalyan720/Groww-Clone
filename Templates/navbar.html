@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Mutual Funds Online : Explore</title>
+  </head>
+  <body>
+    <!-- Navigation bar-->
+    <div class="navbar">
+      <div class="navbar_1">
+        <img
+          src="{{ url_for('static', filename='Media/groww-logo-270.webp') }}"
+          alt="Groww Logo"
+          class="groww_logo"
+        />
+        <a href="">Stocks</a>
+        <a href="">F&amp;O</a>
+        <a href="/MutualFunds">Mutual Funds</a>
+      </div>
+
+      <div class="navbar_2">
+        <div class="search_box">
+          <i class="fa fa-search search_icon"></i>
+          <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder="Search..."
+          />
+        </div>
+
+        <a href="/notifications">
+          <!-- clickable bell -->
+          <i class="fa fa-bell bell_icon"></i>
+        </a>
+
+        <a href="/profile">
+          <!-- clickable profile -->
+          <img
+            src="{{ url_for('static', filename='Media/profile.jpg') }}"
+            alt="Profile"
+            class="profile_pic"
+          />
+        </a>
+      </div>
+    </div>
+    <hr />
+  </body>
+</html>

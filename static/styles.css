@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+
+/* ─── Navbar & Fieldsbar ─────────────────── */
+.navbar, .fieldsbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10%;
+}
+
+.navbar_1, .fieldsbar_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar_2, .fieldsbar_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ─── Links ───────────────────────────────── */
+.navbar_1 a, .navbar_2 a,
+.fieldsbar_1 a, .fieldsbar_2 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.navbar_1 a:hover, .navbar_2 a:hover,
+.fieldsbar_1 a:hover, .fieldsbar_2 a:hover {
+    color: #00d09c;
+}
+
+/* ─── Search box ──────────────────────────── */
+.search_box {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 6px 14px;
+    gap: 8px;
+}
+
+.search_icon { color: #aaaaaa; font-size: 14px; }
+
+#search {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    width: 200px;
+}
+
+#search::placeholder { color: #aaaaaa; }
+
+/* ─── Bell icon ───────────────────────────── */
+.bell_icon { color: #ffffff; font-size: 20px; cursor: pointer; }
+.bell_icon:hover { color: #00d09c; }
+
+/* ─── Groww Logo ──────────────────────────── */
+.groww_logo { height: 40px; width: auto; border-radius: 0; }
+
+/* ─── Profile picture ─────────────────────── */
+.profile_pic {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00d09c;
+    cursor: pointer;
+}
+.profile_pic:hover { border-color: #ffffff; }
+
+/* ─── Global divider ──────────────────────── */
+hr {
+    border: none;
+    border-top: 1px solid #222;
+    margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   PAGE LAYOUT — two-column (main + sidebar)
+   ══════════════════════════════════════════ */
+.page_layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;                        /* gap handled by sidebar border + padding */
+    padding: 0 10%;                /* matches navbar horizontal padding */
+    margin-top: 10px;
+}
+
+/* ─── Left column — grows to fill remaining space ── */
+.col_main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;        /* stacks Popular Funds → Collections → Funds by Groww */
+    gap: 0;                        /* spacing handled per .section */
+    padding-right: 40px;           /* breathing room before the divider */
+}
+
+/* ─── Right sidebar — fixed width, divided by a left border ── */
+.col_sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;        /* stacks Your Investments → Products & Tools */
+    gap: 0;
+    border-left: 1px solid #222;  /* visual divider between the two columns */
+    padding-left: 40px;
+}
+
+/* ─── Generic section block used in both columns ── */
+.section {
+    padding: 30px 0;               /* vertical breathing room between sections */
+    border-bottom: 1px solid #1a1a1a; /* subtle separator between sections */
+}
+
+.section:last-child {
+    border-bottom: none;           /* no border after the last section in a column */
+}
+
+.section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* ══════════════════════════════════════════
+   CARDS
+   ══════════════════════════════════════════ */
+.cards_container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 16px;
+    width: 240px;
+    cursor: pointer;
+    transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    border: 1px solid #00d09c;
+    transform: translateY(-4px);
+}
+
+/* sidebar cards stretch to full sidebar width */
+.col_sidebar .card {
+    width: 100%;
+}
+
+.card_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.fund_logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #222;
+}
+
+.card_title { display: flex; flex-direction: column; }
+
+.fund_name  { font-size: 13px; font-weight: 600; color: #ffffff; margin: 0; }
+.fund_type  { font-size: 11px; color: #aaaaaa; margin: 3px 0 0; }
+
+.card_divider {
+    border: none;
+    border-top: 1px solid #222222;
+    margin-bottom: 12px;
+}
+
+.card_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.metric { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.metric_label { font-size: 11px; color: #aaaaaa; margin: 0; }
+.metric_value { font-size: 13px; font-weight: 600; color: #ffffff; margin: 0; }
+.green { color: #00d09c; }
+
+/* ══════════════════════════════════════════
+   COLLECTIONS — category cards
+   ══════════════════════════════════════════ */
+.category_row {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.category_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 16px 12px;
+    width: 100px;
+    cursor: pointer;
+    transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.category_card:hover {
+    border: 1px solid #00d09c;
+    transform: translateY(-4px);
+}
+
+.category_img { height: 48px; width: 48px; object-fit: contain; }
+
+.category_label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   PRODUCTS AND TOOLS — sidebar list
+   ══════════════════════════════════════════ */
+.tools_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tools_list li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background-color: #111111;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #cccccc;
+    transition: background 0.2s ease, border 0.2s ease, color 0.2s ease;
+}
+
+.tools_list li a i {
+    width: 16px;
+    text-align: center;
+    color: #00d09c;
+    font-size: 14px;
+}
+
+.tools_list li a:hover {
+    background-color: #0d1f1a;
+    border-color: #00d09c;
+    color: #ffffff;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════ */
+.footer {
+    margin-top: 20px;
+    background-color: #0a0a0a;
+    border-top: 1px solid #1e1e1e;
+    padding: 50px 10% 30px;
+}
+
+/* ─── Top row: brand + 4 link columns ──── */
+.footer_top {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Brand column */
+.footer_brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 180px;
+    flex: 1.2;
+}
+
+.footer_logo {
+    height: 50px;
+    width: 50px;
+    filter: brightness(1.1);
+}
+
+.footer_tagline {
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.6;
+}
+
+/* Social icons */
+.footer_social {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.footer_social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #aaaaaa;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+}
+
+.footer_social a:hover {
+    background-color: #00d09c;
+    border-color: #00d09c;
+    color: #000000;
+}
+
+/* Link columns */
+.footer_col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-width: 130px;
+}
+
+.footer_col h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+}
+
+.footer_col a {
+    font-size: 13px;
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer_col a:hover { color: #00d09c; }
+
+/* ─── Divider ─────────────────────────── */
+.footer_hr {
+    border: none;
+    border-top: 1px solid #1e1e1e;
+    margin: 36px 0 24px;
+}
+
+/* ─── Bottom row: legal & copyright ──── */
+.footer_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer_reg {
+    font-size: 12px;
+    color: #666666;
+}
+
+.footer_disclaimer {
+    font-size: 11px;
+    color: #444444;
+    line-height: 1.7;
+    max-width: 860px;
+}
+
+.footer_copy {
+    font-size: 12px;
+    color: #555555;
+    margin-top: 4px;
+}
+
+/* ══════════════════════════════════════════
+   YOUR INVESTMENTS — sidebar portfolio view
+   ══════════════════════════════════════════ */
+
+/* Header row: title + "View All" link */
+.inv_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.inv_header h3 { margin-bottom: 0; }
+
+.inv_viewall {
+    font-size: 12px;
+    font-weight: 500;
+    color: #00d09c;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.inv_viewall:hover { text-decoration: underline; }
+
+/* ─── Portfolio summary strip ─────────────── */
+.portfolio_summary {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #0d1f1a;
+    border: 1px solid #1a3a2e;
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ps_block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 0 12px;
+}
+
+.ps_divider {
+    width: 1px;
+    background-color: #1e3a30;
+    align-self: stretch;
+}
+
+.ps_label {
+    font-size: 11px;
+    color: #6b9e8a;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.ps_value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ps_value.green { color: #00d09c; }
+
+.ps_pct {
+    font-size: 11px;
+    font-weight: 500;
+    color: #00d09c;
+}
+
+/* ─── Fund rows ───────────────────────────── */
+.inv_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inv_row {
+    background-color: #111111;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.inv_row:hover {
+    border-color: #00d09c33;
+    background-color: #0f1a17;
+}
+
+/* Top part: logo · name · current value */
+.inv_row_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.inv_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.inv_info .fund_name {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inv_info .fund_type { font-size: 10px; }
+
+/* Current value + P&L pill — right aligned */
+.inv_returns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.inv_current {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.inv_pnl {
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+.inv_returns.positive .inv_pnl {
+    color: #00d09c;
+    background-color: #00d09c18;
+}
+
+.inv_returns.negative .inv_pnl {
+    color: #ff6b6b;
+    background-color: #ff6b6b18;
+}
+
+/* Bottom metadata row */
+.inv_row_bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.inv_meta {
+    font-size: 10px;
+    color: #666666;
+    background-color: #1a1a1a;
+    padding: 3px 8px;
+    border-radius: 20px;
+}
+
+/* Progress bar */
+.inv_progress_bar {
+    height: 3px;
+    background-color: #1e1e1e;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.inv_progress_fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d09c, #00a87a);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.inv_progress_fill.negative_fill {
+    background: linear-gradient(90deg, #ff6b6b, #cc4444);
+}
